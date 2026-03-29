@@ -119,3 +119,4 @@ curl http://127.0.0.1:8000/debug/callback-sink
 - Dify 대화 ID 저장소는 현재 메모리 기반이라 인스턴스 재시작 후 대화 맥락이 사라질 수 있습니다.
 
 # CCCAI-ADAPTOR
+# CCCAI-ADAPTOR
