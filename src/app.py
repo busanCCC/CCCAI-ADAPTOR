@@ -39,7 +39,7 @@ async def root() -> dict[str, Any]:
         "ok": True,
         "name": runtime_settings.app_name,
         "version": runtime_settings.app_version,
-        "backend": runtime_settings.backend,
+        "backend": "dify",
         "message": "vercel fastapi adapter is running",
     }
 
@@ -50,7 +50,7 @@ async def health() -> dict[str, Any]:
     return {
         "ok": True,
         "env": runtime_settings.app_env,
-        "backend": runtime_settings.backend,
+        "backend": "dify",
     }
 
 

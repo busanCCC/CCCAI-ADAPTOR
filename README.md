@@ -9,7 +9,7 @@ Kakao
   -> /kakao/webhook
   -> FastAPI on Vercel
   -> 즉시 useCallback=true 응답
-  -> 백그라운드에서 echo 또는 Dify 호출
+  -> 백그라운드에서 Dify 호출
   -> callbackUrl 로 최종 말풍선 전송
 ```
 
@@ -30,11 +30,7 @@ Kakao
 
 ```dotenv
 APP_ENV=development
-BACKEND=echo
-ECHO_PREFIX=echo:
-
-# BACKEND=dify일 때
-DIFY_BASE_URL=https://your-dify-host/v1
+DIFY_BASE_URL=https://api.dify.ai/v1
 DIFY_API_KEY=app-xxxxxxxx
 ```
 
@@ -107,7 +103,7 @@ curl http://127.0.0.1:8000/debug/callback-sink
 2. Vercel에서 Import Project를 선택합니다.
 3. Framework Preset은 따로 필요 없습니다.
 4. Python 의존성은 `requirements.txt`로 자동 설치됩니다.
-5. 환경 변수에 `BACKEND`, `DIFY_BASE_URL`, `DIFY_API_KEY` 등을 넣습니다.
+5. 환경 변수에 `DIFY_BASE_URL`, `DIFY_API_KEY` 등을 넣습니다.
 6. 배포 후 `https://<your-project>.vercel.app/health`를 먼저 확인합니다.
 7. 카카오 챗봇 스킬 URL은 `https://<your-project>.vercel.app/kakao/webhook`를 사용합니다.
 
@@ -117,6 +113,3 @@ curl http://127.0.0.1:8000/debug/callback-sink
 - 카카오 문서 기준 callbackUrl은 1분 유효, 1회 사용입니다.
 - `BackgroundTasks` 기반이라 MVP에는 적합하지만, 운영 안정성이 중요하면 큐/워커 구조로 바꾸는 편이 더 안전합니다.
 - Dify 대화 ID 저장소는 현재 메모리 기반이라 인스턴스 재시작 후 대화 맥락이 사라질 수 있습니다.
-
-# CCCAI-ADAPTOR
-# CCCAI-ADAPTOR
