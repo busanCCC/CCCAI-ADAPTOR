@@ -118,3 +118,4 @@ curl http://127.0.0.1:8000/debug/callback-sink
 - `BackgroundTasks` 기반이라 MVP에는 적합하지만, 운영 안정성이 중요하면 큐/워커 구조로 바꾸는 편이 더 안전합니다.
 - Dify 대화 ID 저장소는 현재 메모리 기반이라 인스턴스 재시작 후 대화 맥락이 사라질 수 있습니다.
 
+# CCCAI-ADAPTOR
